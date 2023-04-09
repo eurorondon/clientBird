@@ -1,6 +1,7 @@
 import React from 'react';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Uploader } from './components/Uploader/Uploader';
+import { ImagesList } from './components/ImagesList/ImagesList';
 
 
 
@@ -11,6 +12,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <div className="App">
         <Uploader/>
+        <ImagesList/>
       </div>
     </QueryClientProvider>
   );

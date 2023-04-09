@@ -1,10 +1,12 @@
 import React, { ChangeEvent } from "react";
-import { useMutation } from "@tanstack/react-query";
+import {  useMutation, useQueryClient } from "@tanstack/react-query";
 import { uploadPhoto } from "../../api/photo";
 
 export const Uploader: React.FC = () => {
+  const queryClient = useQueryClient();
   const mutation = useMutation(uploadPhoto, {
     onSuccess(response) {
+      queryClient.invalidateQueries({ queryKey: ["photos"] })
       response.json().then((data) => console.log(data))
     }
   });
