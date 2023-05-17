@@ -19,7 +19,7 @@ export const ImagesList: React.FC = () => {
   if (isLoading) return <div>loading ...</div>;
   return (
     <div className="columns-3 gap-4 my-8">
-      {data.results?.map((image: Image) => (
+      {data.items?.map((image: Image) => (
         <div
           key={image.primary_key}
           className="rounded overflow-hidden shadow-lg bg-white mb-4 relative"
