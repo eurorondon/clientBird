@@ -19,7 +19,7 @@ export const ImagesList: React.FC = () => {
   if (isLoading) return <div>loading ...</div>;
   return (
     <div className="columns-3 gap-4 my-8">
-      {data?.results.map((image: Image) => (
+      {data.results?.map((image: Image) => (
         <div
           key={image.primary_key}
           className="rounded overflow-hidden shadow-lg bg-white mb-4 relative"
@@ -32,7 +32,7 @@ export const ImagesList: React.FC = () => {
             <h4 className="text-gray-900 text-xl font-medium mb-2 pb-2">
               {image.name}{" "}
             </h4>
-            {image.labels.map((label) => (
+            {image?.labels?.map((label) => (
               <span className="inline-flex items baseline bg-gray-200 rounded-full mr-2 mb-2 px-2 py-1 text-sm font-semibold text-gray-700">
                 <span className="p-1">#{label}</span>
                 <XCircleIcon className="h-6 w-6 text-red-500 " />
